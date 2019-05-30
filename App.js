@@ -7,24 +7,22 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, StatusBar, Image, ImageBackground} from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
-type Props = {};
-export default class App extends Component<Props> {
+
+export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>GIO APP</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+      
+      <ImageBackground style={styles.container}
+             source={require('./assets/splash-bg.png')}
+           >
+         <StatusBar backgroundColor="#f65433" barStyle="light-content" />    
+      <Image source={require('./assets/logo.png')}/>
+     
+           </ImageBackground>
+
     );
   }
 }
@@ -34,18 +32,17 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'black',
+    backgroundColor: 'white',
   },
   welcome: {
     fontSize: 50,
     textAlign: 'center',
     fontWeight: 'bold',
     margin: 10,
-    color:'white'
+    color:'orange'
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#FFFFFF',
-    marginBottom: 5,
+  SplashLogo: {
+    margin:'auto'
   },
+
 });
